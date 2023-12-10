@@ -4,7 +4,7 @@ const Item = ({info}) => {
  
   const {name, email, picture} = info;
   const image = picture?.large
-  const {first, last, title} = name
+  const {first, last, title} = name;
 
   return (
     <div>
@@ -15,4 +15,4 @@ const Item = ({info}) => {
   )
 }
 
-export default Item
+export default Item;

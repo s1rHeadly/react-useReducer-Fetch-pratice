@@ -42,9 +42,7 @@ const reducerFnc = (state, action) => {
 }
 
 
-
-
-
+//component
 function App() {
 
   const [state, dispatch] = useReducer(reducerFnc, initialState);
@@ -56,10 +54,12 @@ function App() {
     const getData = async() => { // the getdata function
 
      try {
+      //set loading to true using a dispatch action
       dispatch({type: 'getArticleStart'}) // dispatch an action to get th loading to true
 
       const response = await fetch('https://randomuser.me/api/?results=6');
       const data = await response.json();
+
 
       dispatch({ // dispatch an action to get the data
         type: 'success',
@@ -67,7 +67,7 @@ function App() {
       })
       
      } catch (error) {
-        dispatch({
+        dispatch({ // use a dispatch action to update the error state
           type: 'failed',
           payload: error,
         })
